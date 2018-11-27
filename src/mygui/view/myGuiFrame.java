@@ -3,18 +3,18 @@ package mygui.view;
 import javax.swing.JFrame;
 import mygui.controller.GuiController;
 
-public class myGuiFrame extends JFrame{
+public class MyGuiFrame extends JFrame{
 	
 	private GuiController appController;
-	private myGuiFrame appPanel;
+	private MyGuiPanel appPanel;
 
 //+-------------------Needs Refrence to data member as an argument---------------+
-	public myGuiFrame(GuiController appController) {
+	public MyGuiFrame(GuiController appController) {
 //+---------------super is an explicit call to the class-------------+
 //+------------------Must be first line in constructor---------------+
 		super();
 		this.appController = appController;
-		this.appPanel = new SamplePanel(appController);
+		this.appPanel = new MyGuiPanel(appController);
 		setupFrame();
 	}
 	

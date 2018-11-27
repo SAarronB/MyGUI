@@ -1,9 +1,17 @@
 package mygui.controller;
 
+import mygui.view.MyGuiFrame;
+
 public class GuiController{
 	
 //+-----------------CODE STARTS HERE--------------+
-	public void start() {
+
+	private MyGuiFrame appFrame;
 		
+	public GuiController() {
+		this.appFrame = new MyGuiFrame(this);
+	}
+	public void start() {
+			
 	}
 }

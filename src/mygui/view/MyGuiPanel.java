@@ -16,8 +16,8 @@ public class MyGuiPanel extends JPanel{
 	public MyGuiPanel(GuiController appController) {
 		super();
 		this.appController = appController;
-		colorButton = new JButton("!!P0WER BUTT0N!!");
-		textLabel = new JLabel("PR3SS DA BUTT0N");
+		colorButton = new JButton("Extend by 10ft");
+		textLabel = new JLabel("MMMWHAT??");
 		setupPanel();
 		setupLayout();
 		setupListener();
@@ -40,7 +40,16 @@ public class MyGuiPanel extends JPanel{
 	{
 		// TODO Auto-generated method stub
 		colorButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent mouseClick) {}
+			public void actionPerformed(ActionEvent mouseClick) {changeBackgroundColor();}
 		});
+	}
+	
+	private void changeBackgroundColor() {
+		int red = (int) (Math.random()*256);
+		int green = (int) (Math.random()*256);
+		int blue = (int) (Math.random()*256);
+		int alfa = (int) (Math.random()*256);
+		this.setBackground(new Color(red,green,blue,alfa));
+		textLabel.setText("Marco's LiPs");
 	}
 }

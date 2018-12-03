@@ -12,12 +12,15 @@ public class MyGuiPanel extends JPanel{
 	
 	private JButton colorButton;
 	private JLabel textLabel;
+	private SpringLayout appLayout;
 	
 	public MyGuiPanel(GuiController appController) {
 		super();
 		this.appController = appController;
-		colorButton = new JButton("Extend by 10ft");
-		textLabel = new JLabel("MMMWHAT??");
+		colorButton = new JButton("*TAKES ARROW TO THE KNEE*");
+		textLabel = new JLabel("I used to be an adventurer like you");
+		appLayout = new SpringLayout();
+
 		setupPanel();
 		setupLayout();
 		setupListener();
@@ -25,15 +28,21 @@ public class MyGuiPanel extends JPanel{
 
 	private void setupPanel(){
 		// TODO Auto-generated method stub
+		this.setLayout(appLayout);
 		this.setBackground(Color.DARK_GRAY);
 		this.add(textLabel);
 		this.add(colorButton);
 	}
 	
 	private void setupLayout()
-	{
-		// TODO Auto-generated method stub
-		
+	{		appLayout.putConstraint(SpringLayout.NORTH, colorButton, 6, SpringLayout.SOUTH, textLabel);
+		appLayout.putConstraint(SpringLayout.WEST, colorButton, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, colorButton, -582, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, colorButton, -913, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, textLabel, 23, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, textLabel, -630, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, textLabel, 21, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, textLabel, -929, SpringLayout.EAST, this);
 	}
 	
 	private void setupListener()
@@ -50,6 +59,6 @@ public class MyGuiPanel extends JPanel{
 		int blue = (int) (Math.random()*256);
 		int alfa = (int) (Math.random()*256);
 		this.setBackground(new Color(red,green,blue,alfa));
-		textLabel.setText("Marco's LiPs");
+		textLabel.setText("");
 	}
 }

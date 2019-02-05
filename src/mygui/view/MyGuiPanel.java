@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 //+--------------Needs to Extend JPanel-----------+
 public class MyGuiPanel extends JPanel{
 	private GuiController appController;
-	
 	private JButton colorButton;
 	private JLabel textLabel;
 	private SpringLayout appLayout;
